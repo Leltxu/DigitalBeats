@@ -2,5 +2,5 @@
 Proyecto de php de la asignatura IAWE del centro integradado de Maria Ana Sanz
 
 ## Colores
-#ebecec
-#f8f9fa
+- Blanco header: #ebecec
+- Blanco menu: #f8f9fa
