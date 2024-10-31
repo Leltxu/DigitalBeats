@@ -98,7 +98,7 @@ header .der a:hover {
 .menu {
     position: fixed;
     top: 0;
-    left: 0;
+    left: -300px;
     z-index: 10;
     background-color: #f8f9fa;
     height: 100vh;
@@ -107,6 +107,11 @@ header .der a:hover {
     padding-top: 0;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
+    transition: left 0.3s ease;
+}
+
+.menu.visible {
+    left: 0; 
 }
 
 .menu-header {
@@ -161,5 +166,29 @@ header .der a:hover {
 }
 
 .close-btn:hover {
-    color: #dc3545; /* Cambia el color al pasar por encima */
+    color: #dc3545;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 9;
+}
+
+.menu.visible {
+    opacity: 1;
+    visibility: visible;
+    z-index: 9;
+}
+
+.overlay.visible {
+    opacity: 1;
+    visibility: visible;
 }
