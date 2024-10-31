@@ -3,7 +3,7 @@ body {
 }
 
 header {
-    background-color: rgb(235, 236, 236);
+    background-color: #ebecec;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -87,7 +87,7 @@ header .der a:hover {
     color: #aaa;
 }
 
-/* MENU */
+/* MENU DESPEGABLE CATEGORIAS */
 
 .menu {
     position: fixed;

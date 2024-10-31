@@ -11,7 +11,7 @@
 
     <header>
         <div class="izq">
-            <a href="#"><img src="../img/logo.png" alt="logo"></a>
+            <a href="#"><img src="img/logo.png" alt="logo"></a>
             <a href="#" class="btn_cat" id="openMenuBtn">
                 <i class="fa-solid fa-bars"></i> 
                 <span class="categoria">Todas las categorías</span>
@@ -84,5 +84,3 @@
         </ul>
     </aside>
     <script src="js/menu.js"></script>
-</body>
-</html>
