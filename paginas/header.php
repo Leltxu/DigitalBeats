@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <script src="https://kit.fontawesome.com/dacbd6cb00.js" crossorigin="anonymous"></script>
-    <title><?php $titulo; ?></title>
+    <title><?php echo $titulo; ?></title>
 </head>
 <body>
 

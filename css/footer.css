@@ -1,0 +1,29 @@
+footer {
+    background-color: #ebecec;
+    padding-block: 10px;
+    color: #3d3d3d;
+}
+
+footer .bloque {
+    display: flex;
+    justify-content: space-around;
+}
+
+footer .bloque ul li {
+    padding-block: 5px;
+}
+
+footer .bloque ul li a {
+    color: #3d3d3d;
+    
+}
+
+footer .bloque i {
+    font-size: 20px;
+}
+
+
+.copy {
+    width: 100%;
+    text-align: center;
+}
