@@ -1,49 +1,100 @@
-form {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 70px;
-    background-color: #e7e3e3;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 5px rgb(138, 208, 255);
-    font-family: Arial, sans-serif;
-  }
-  
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8; /* Fondo gris claro */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  background-color: #ffffff; /* Fondo blanco */
+  border: 1px solid #d0d7de; /* Borde gris claro */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  gap: 20px; /* Espaciado entre el logo y el formulario */
+  align-items: center; /* Centra verticalmente el contenido */
+}
+
+.logo-container {
+  flex: 1; /* La sección del logo ocupa un espacio fijo */
+  text-align: center;
+}
+
+.logo-container img {
+  max-width: 100%;
+  max-height: 150px; /* Limita el tamaño máximo del logo */
+}
+
+.form-container {
+  flex: 2; /* El formulario ocupa más espacio */
+}
+
+h3 {
+  text-align: center;
+  color: #2a4d69; /* Azul oscuro */
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #2a4d69; /* Azul oscuro */
+  font-size: 14px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #cfd8e3; /* Gris claro */
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #5a9bd6; /* Azul más brillante */
+  outline: none;
+  box-shadow: 0px 0px 4px rgba(90, 155, 214, 0.5);
+}
+
+input[type="submit"] {
+  background-color: #2a4d69; /* Azul oscuro */
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e7ca8; /* Azul intermedio */
+}
+
+input[type="submit"]:active {
+  background-color: #1e3d59; /* Azul aún más oscuro */
+}
+
+form input::placeholder {
+  color: #adb5bd; /* Placeholder gris */
+  font-style: italic;
+}
 
 
-  textarea {
-    width: 100%;
-    padding: 1<0px;
-    margin: 10px 0 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 16px;
-    font-family: inherit;
-  }
-  
-
-  label {
-    font-weight: bold;
-    margin-bottom: 10px;
-    display: block;
-  }
-  
-
-  button[type="submit"] {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    background-color: #4CAF50;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #45a049;
-  }
-  
