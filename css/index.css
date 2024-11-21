@@ -1,5 +1,24 @@
+.bienvenida {
+    width: 100%;
+    text-align: center;
+    padding-block: 50px;
+    font-size: 40px;
+}
+
+.productos {
+    background-color: #f8f9fa;
+    width: 100%;
+    padding: 20px;
+    padding-bottom: 70px;
+}
+
+.productos h3 {
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
 .tarjetas {
-    margin-inline: 10px;
+    margin-inline: 20px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
