@@ -1,5 +1,6 @@
-.novedades {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.tarjetas {
+    margin-inline: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
 }

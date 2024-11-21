@@ -1,5 +1,6 @@
 @import "header.css";
 @import "footer.css";
+@import "index.css";
 
 * {
     margin: 0;
@@ -46,7 +47,7 @@ ul {
 }
 
 .tarjeta .valoracion .estrella {
-    color: #ff9800;
+    color: #088aa1;
     font-size: 18px;
 }
 
