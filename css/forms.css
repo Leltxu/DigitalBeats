@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f4f8; /* Fondo gris claro */
+  background-color: #f0f4f8; 
   margin: 0;
   padding: 0;
   display: flex;
@@ -9,44 +9,24 @@ body {
   height: 100vh;
 }
 
-.container {
-  display: flex;
-  background-color: #ffffff; /* Fondo blanco */
-  border: 1px solid #d0d7de; /* Borde gris claro */
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  width: 600px;
-  gap: 20px; /* Espaciado entre el logo y el formulario */
-  align-items: center; /* Centra verticalmente el contenido */
-}
-
-.logo-container {
-  flex: 1; /* La sección del logo ocupa un espacio fijo */
-  text-align: center;
-}
-
-.logo-container img {
+.logo {
   max-width: 100%;
-  max-height: 150px; /* Limita el tamaño máximo del logo */
-}
-
-.form-container {
-  flex: 2; /* El formulario ocupa más espacio */
+  margin-bottom: 10px;
+  max-height: 150px;
 }
 
 h3 {
   text-align: center;
-  color: #2a4d69; /* Azul oscuro */
+  color: #6a90aa; 
   margin-bottom: 20px;
-  font-size: 24px;
+  font-size: 36px;
 }
 
 label {
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
-  color: #2a4d69; /* Azul oscuro */
+  color: #2a4d69; 
   font-size: 14px;
 }
 
@@ -54,11 +34,12 @@ input[type="text"],
 input[type="tel"],
 input[type="email"],
 input[type="password"],
-input[type="submit"] {
+input[type="submit"],
+select {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
-  border: 1px solid #cfd8e3; /* Gris claro */
+  border: 1px solid #cfd8e3; 
   border-radius: 4px;
   box-sizing: border-box;
   font-size: 14px;
@@ -68,14 +49,20 @@ input[type="submit"] {
 input[type="text"]:focus,
 input[type="tel"]:focus,
 input[type="email"]:focus,
-input[type="password"]:focus {
-  border-color: #5a9bd6; /* Azul más brillante */
+input[type="password"]:focus,
+select:focus {
+  border-color: #5a9bd6; 
   outline: none;
   box-shadow: 0px 0px 4px rgba(90, 155, 214, 0.5);
 }
 
+input[id="descripcion"] {
+  height: 50px;
+  padding: 0px;
+}
+
 input[type="submit"] {
-  background-color: #2a4d69; /* Azul oscuro */
+  background-color: #2a4d69; 
   color: white;
   border: none;
   cursor: pointer;
@@ -85,16 +72,9 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #3e7ca8; /* Azul intermedio */
+  background-color: #3e7ca8; 
 }
 
 input[type="submit"]:active {
-  background-color: #1e3d59; /* Azul aún más oscuro */
+  background-color: #1e3d59; 
 }
-
-form input::placeholder {
-  color: #adb5bd; /* Placeholder gris */
-  font-style: italic;
-}
-
-

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/forms.css">
+    <title>Registrarse</title>
+</head>
+<body>
+    
+    <form action="">
+        <img src="../img/logo.png" alt="" class="logo"><h3>Contacto</h3>
+       
+        <label for="email">Correo Electronico</label>
+        <input type="email" name="email" id="email"><br>
+
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre">
+        
+        <label for="motivo">Motivo de contacto</label>
+        <select id="opciones" name="opciones">
+            <option value="op">-</option>
+            <option value="prob">🧑‍🏭Problemas con mi pedido</option>
+            <option value="curriculum">👷🏿Quiero trabajar aqui</option>
+            <option value="otro">📓Otro motivo</option>
+        </select><br>
+    
+        
+        <label for="pedido">Numero de pedido (Opcional)</label><br>
+        <input type="text" name="pedido">
+        
+        <label for="descripcion">Descripcion</label>
+        <input type="text" name="descripcion" id="descripcion">
+        <input type="submit" value="Enviar">
+    
+    </form>
+</body>
+</html>
