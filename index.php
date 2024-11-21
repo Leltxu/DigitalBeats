@@ -1,21 +1,37 @@
 <?php
-$titulo="Pagina Principal";
-include "paginas/header.php";
+    $titulo = "Pagina Principal";
+    include "paginas/header.php";
+    include "functions.php";
 ?>
-    <h1>Pagina principal</h1>
+    <div class="bienvenida">
+        <h2>Bienvenido a Digital Beats ❤️</h2>
+    </div>
 
-    <h2>Novedades</h2>
-    <div class="tarjetas">
-    <?php
-        for ($i=0; $i < 7; $i++) {
-            $tituloProducto="Intel coro I5 11560 4.6GHz, 8 nucleos 16 hilos";
-            $precioActual=rand(150,250);
-            $precioAntes=rand(251,350);
-            $estrella=rand(0,10);
-            include "plantillas/tarjeta.php";
-        }
-    ?>
+    <div class="productos">
+        <h3>Novedades</h3>
+        <div class="tarjetas">
+            <?php
+            $titulo = "Intel coro I5 11560 4.6GHz, 8 nucleos 16 hilos";
+            $precio = rand(150, 250);
+            $precioAntes = rand(251, 350);
+            $estrellas = rand(0, 10);
+            mostrarTarjetas(7, $titulo, $precio, $precioAntes, $estrellas);
+            ?>
+        </div>
+    </div>
+    
+    <div class="productos">
+        <h3>Destacado</h3>
+        <div class="tarjetas">
+            <?php mostrarTarjetas(7, "Intel Core I5 115554 4.5 GHz, 8 nucleos 4 hiloes"); ?>
+        </div>
+    </div>
+    <div class="productos">
+        <h3>Lo mas vendido</h3>
+        <div class="tarjetas">
+            <?php mostrarTarjetas(7, "Intel Core I5 115554 4.5 GHz, 8 nucleos 4 hiloes"); ?>
+        </div>
     </div>
 <?php
-include "paginas/footer.html";
+    include "paginas/footer.html";
 ?>
