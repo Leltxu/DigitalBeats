@@ -11,7 +11,10 @@ if (isset($_GET['page'])) {
         include "login.html";
     } else if ($_GET['page'] == 'cesta') {
         include "cesta.php";
-    } else if ($_GET['page'] == "prosuctos") {
-        include "productos.php";
     }
+}
+
+if (isset($_GET['product'])) {
+    $producto = $_GET['product'];
+    include "productos.php";
 }
