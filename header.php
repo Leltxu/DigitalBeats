@@ -38,7 +38,7 @@
             <h3>Categorías</h3>
             <span class="close-btn">&times;</span>
         </div>
-        <!-- Categorias Probisionales-->
+        <!-- Categorias Provisionales-->
         <ul>
             <li>
                 Ordenadores
