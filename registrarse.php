@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/forms.css">
+    <link rel="stylesheet" href="css/forms.css">
     <title>Registrarse</title>
 </head>
 <body> 
     <form action="">
-        <img src="../img/logo.png" alt="" class="logo"><h3>Crear cuenta</h3>
+        <img src="img/logo.png" alt="" class="logo"><h3>Crear cuenta</h3>
         <label for="nombre">Nombre y Apellidos</label>
         <input type="text" name="nombre" id="nombre"><br>
 
@@ -25,7 +25,7 @@
         <input type="password" name="rcontraseña" id="rcontraseña"><br>
 
         <input type="submit" value="Enviar">
-        <a href="Inicio de sesion.html">¿Ya tienes cuenta?</a>
+        <a href="index.php?page=login">¿Ya tienes cuenta?</a>
     </form>
 </body>
 </html>
