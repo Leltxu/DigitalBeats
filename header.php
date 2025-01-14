@@ -13,7 +13,7 @@
 
     <header>
         <div class="izq">
-            <a href="#"><img src="img/logo.png" alt="logo"></a>
+            <a href="index.php"><img src="img/logo.png" alt="logo"></a>
             <a href="#" class="btn_cat" id="openMenuBtn">
                 <i class="fa-solid fa-bars"></i>
                 <span class="categoria">Todas las categorías</span>
@@ -28,8 +28,8 @@
             </div>
         </div>
         <div class="der">
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a href="#"><i class="fa-solid fa-user"></i></a>
+            <a href="index.php?page=cesta"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="index.php?page=login"><i class="fa-solid fa-user"></i></a>
         </div>
     </header>
 

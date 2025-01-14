@@ -8,7 +8,11 @@ if (isset($_GET['page'])) {
     if ($_GET['page'] == 'contacto') {
         include "contacto.html";
     } else if ($_GET['page'] == 'login') {
-        include "login.html";
+        include "login.php";
+    } else if ($_GET['page'] == 'cesta') {
+        include "cesta.php";
+    } else if ($_GET['page'] == 'register') {
+        include "registrarse.php";
     } else if ($_GET['page'] == 'cesta') {
         include "cesta.php";
     }
