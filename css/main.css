@@ -2,6 +2,7 @@
 @import "footer.css";
 @import "index.css";
 @import "productos.css";
+@import "cesta.css";
 
 * {
     margin: 0;
