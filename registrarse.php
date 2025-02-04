@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD:Registrarse.html
     <link rel="stylesheet" href="../css/forms.css">
     <title>Registro</title>
+=======
+    <link rel="stylesheet" href="css/forms.css">
+    <title>Registrarse</title>
+>>>>>>> 0d441bd31b68417f61f9f222b9c50f36917bca41:registrarse.php
 </head>
 <body> 
     <form action="">
-        <img src="../img/logo.png" alt="" class="logo"><h3>Crear cuenta</h3>
+        <img src="img/logo.png" alt="" class="logo"><h3>Crear cuenta</h3>
         <label for="nombre">Nombre y Apellidos</label>
         <input type="text" name="nombre" id="nombre"><br>
 
@@ -28,7 +33,11 @@
         <input type="password" name="rcontraseña" id="rcontraseña"><br>
 
         <input type="submit" value="Enviar">
+<<<<<<< HEAD:Registrarse.html
         <a href="login.html">¿Ya tienes cuenta?</a>
+=======
+        <a href="index.php?page=login">¿Ya tienes cuenta?</a>
+>>>>>>> 0d441bd31b68417f61f9f222b9c50f36917bca41:registrarse.php
     </form>
 </body>
 </html>

@@ -44,11 +44,6 @@
     cursor: pointer;
 }
 
-.filtro input[type="checkbox"] {
-    margin-right: 10px;
-    vertical-align: middle;
-}
-
 .filtro select {
     width: 100%;
     padding: 8px;
@@ -89,10 +84,7 @@
 }
 
 /* Estilo para el contenedor del filtro */
-.filtro p, .filtro select, .filtro input[type="checkbox"] {
-    display: block;
-    margin-bottom: 10px;
-}
+
 
 /* Estili contenedor productos */ 
 

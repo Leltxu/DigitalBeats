@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,25 +8,28 @@
     <script src="https://kit.fontawesome.com/dacbd6cb00.js" crossorigin="anonymous"></script>
     <title><?php echo $titulo; ?></title>
 </head>
+
 <body>
 
     <header>
         <div class="izq">
-            <a href="#"><img src="img/logo.png" alt="logo"></a>
+            <a href="index.php"><img src="img/logo.png" alt="logo"></a>
             <a href="#" class="btn_cat" id="openMenuBtn">
-                <i class="fa-solid fa-bars"></i> 
+                <i class="fa-solid fa-bars"></i>
                 <span class="categoria">Todas las categorías</span>
             </a>
         </div>
         <div class="centro">
             <div class="search-container">
-                <input type="text" placeholder="Buscar">
-                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <form action="index.php" method="get">
+                    <input type="text" name="product" placeholder="Buscar">
+                    <button type="submit"><i class="fa-solid fa-search"></i></button>
+                </form>
             </div>
         </div>
         <div class="der">
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a href="#"><i class="fa-solid fa-user"></i></a>
+            <a href="index.php?page=cesta"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="index.php?page=login"><i class="fa-solid fa-user"></i></a>
         </div>
     </header>
 

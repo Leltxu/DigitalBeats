@@ -18,7 +18,7 @@
         <input type="password" name="contraseña" id="contraseña"><br>
 
         <input type="submit" value="Iniciar sesion">
-        <a href="Registrarse.html">¿No tienes cuenta?</a>
+        <a href="index.php?page=register">¿No tienes cuenta?</a>
        
 
     </form>
