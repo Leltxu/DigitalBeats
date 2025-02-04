@@ -1,0 +1,63 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+h3 {
+    font-size: 24px;
+    color: #000000;
+    margin-top: 10px;
+    margin-left: 50px;
+    text-align: center;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.contenedor{
+    display: flex;
+
+}
+
+.datos {
+    margin-left: 50px;
+    margin: auto;
+}
+
+.datos p {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 10px auto;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.lateral {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 200px;
+    text-align: center;
+}
+
+.lateral p{
+    margin-bottom: 50px;
+}
+
+a {
+    font-weight: bold;
+    color: aqua;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+

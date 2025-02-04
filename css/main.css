@@ -2,7 +2,11 @@
 @import "footer.css";
 @import "index.css";
 @import "productos.css";
+<<<<<<< HEAD
+@import "micuenta.css";
+=======
 @import "cesta.css";
+>>>>>>> 0d441bd31b68417f61f9f222b9c50f36917bca41
 
 * {
     margin: 0;
