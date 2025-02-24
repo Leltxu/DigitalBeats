@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/main.css">
     <script src="https://kit.fontawesome.com/dacbd6cb00.js" crossorigin="anonymous"></script>
     <title><?php echo $titulo; ?></title>
 </head>
@@ -13,7 +14,7 @@
 
     <header>
         <div class="izq">
-            <a href="index.php"><img src="img/logo.png" alt="logo"></a>
+            <a href="index.php"><img src="assets/img/logo.png" alt="logo"></a>
             <a href="#" class="btn_cat" id="openMenuBtn">
                 <i class="fa-solid fa-bars"></i>
                 <span class="categoria">Todas las categorías</span>
@@ -29,7 +30,7 @@
         </div>
         <div class="der">
             <a href="index.php?page=cesta"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a href="index.php?page=login"><i class="fa-solid fa-user"></i></a>
+            <a href="controladores/controler_forms.php"><i class="fa-solid fa-user"></i></a>
         </div>
     </header>
 

@@ -1,11 +1,18 @@
 <?php
+function mostrarTarjetas($productos) {
+    include_once 'modelos/model_productos.php';
+    foreach ($productos as $producto) {
+        $tituloProducto=$producto['NOMBRE'];
 
-function mostrarTarjetas($cantidad, $titulo,$precio = 0,$precioMax = 0,$estrellas=0) {
-    for ($i=0; $i < $cantidad; $i++) {
-        $tituloProducto=$titulo;
-        $precioActual=$precio;
-        $precioAntes=$precioMax;
-        $estrella=$estrellas;
-        include "plantillas/tarjeta.php";
+        if ($producto['PRECIO_DESCUENTO'] == 0) {
+            $precioActual=$producto['PRECIO'];
+            $precioAntes=0;
+        } else {
+            $precioActual=$producto['PRECIO_DESCUENTO'];
+            $precioAntes=$producto['PRECIO'];
+        }
+        $estrella=0;
+        $foto=$producto['FOTO'];
+        include "vistas/tarjeta.php";
     }
 }

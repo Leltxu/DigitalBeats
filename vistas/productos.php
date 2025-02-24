@@ -1,8 +1,10 @@
 <?php
 $titulo = "Productos";
 include "header.php";
-include "functions.php"
-    ?>
+
+$busqueda = $_GET['product'];
+
+?>
 <div class="pro-contenedor">
     <div class="filtros">
         <h2>Filtros</h2>
@@ -64,11 +66,8 @@ include "functions.php"
         <h3>+<?php echo rand(10, 500) ?> resultados para "<?php  echo $producto ?>"</h3>
         <div class="tarjetas">
             <?php
-            $titulo = "Intel coro I5 11560 4.6GHz, 8 nucleos 16 hilos";
-            $precio = rand(150, 250);
-            $precioAntes = rand(251, 350);
-            $estrellas = rand(0, 10);
-            mostrarTarjetas(50, $titulo, $precio, $precioAntes, $estrellas);
+
+            mostrarTarjetas(buscarProducto($conexion,$busqueda));
             ?>
         </div>
     </div>
