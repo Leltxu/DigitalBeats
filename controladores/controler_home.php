@@ -15,7 +15,7 @@ if (isset($_GET['page'])) {
     } else if ($_GET['page'] == 'cesta') {
         include "vistas/cesta.php";
     } else if ($_GET['page'] == 'register') {
-        include "registrarse.php";
+        include "vistas/registrarse.php";
     } 
 }
 
