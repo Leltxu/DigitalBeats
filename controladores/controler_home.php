@@ -10,12 +10,8 @@ if (!isset($_GET['page']) && !isset($_GET['product'])) {
 if (isset($_GET['page'])) {
     if ($_GET['page'] == 'contacto') {
         include "contacto.html";
-    } else if ($_GET['page'] == 'login') {
-        include "login.php";
-    } else if ($_GET['page'] == 'cesta') {
+    }  else if ($_GET['page'] == 'cesta') {
         include "vistas/cesta.php";
-    } else if ($_GET['page'] == 'register') {
-        include "vistas/registrarse.php";
     } 
 }
 

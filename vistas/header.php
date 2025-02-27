@@ -30,7 +30,7 @@
         </div>
         <div class="der">
             <a href="index.php?page=cesta"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a href="controladores/controler_forms.php"><i class="fa-solid fa-user"></i></a>
+            <a href="controladores/controler_forms.php"><i class="fa-solid fa-user"></i> <?php if (isset($_SESSION['user'])) echo "Hola ".$_SESSION['user']?></a>
         </div>
     </header>
 
