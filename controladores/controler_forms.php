@@ -9,15 +9,18 @@ if (isset($_POST['login'])) {
     $correo = sanearDatos($_POST['email']);
     $contraseña = sanearDatos($_POST['contraseña']);
     $errores = [];
-    $errores['email'] = validarDatos($correo, 'email');
-    $errores['contraseña'] = validarDatos($contraseña, 'password');
+    $errores['email'] = validarDatos($correo, 'mail');
+    $errores['contraseña'] = validarDatos($contraseña, 'empty');
     if (empty($errores['email']) && empty($errores['contraseña'])) {
-        $usuario = obetenerUser($conexion, $correo, $contraseña);
-        $usuario = $usuario['NOMBRE'];
+        $usuario = loginUser($conexion, $correo, $contraseña);
         if ($usuario) {
-            $_SESSION['user'] = $usuario;
+            $_SESSION['user'] = $usuario['NOMBRE'];
+            header('Location: ../index.php');
+            exit();
         } else {
-            $errores['login'] = 'El usuario o la contraseña son incorrectos';
+            $errores['login'] = 'El correo o la contraseña son incorrectos';
+            include "../vistas/login.php";
+            exit();
         }
     }
 }
@@ -37,12 +40,12 @@ if (isset($_POST['register'])) {
     $errores['tlfn'] = validarDatos($telefono, 'tel');
     $errores['email'] = validarDatos($correo, 'email');
     $errores['contraseña'] = validarDatos($contraseña, 'password');
-    $errores['rcontraseña'] = validarDatos($rcontraseña, 'password');
     if (empty($errores['nombre']) && empty($errores['apellidos']) && empty($errores['fecha']) && empty($errores['tlfn']) && empty($errores['email']) && empty($errores['contraseña']) && empty($errores['rcontraseña'])) {
         if ($contraseña == $rcontraseña) {
             crearUser($conexion, $nombre, $apellidos, $fecha, $telefono, $correo, $contraseña);
             $_SESSION['user'] = $nombre;
             header('Location: ../index.php');
+            exit();
         } else {
             $errores['contraseña'] = 'Las contraseñas no coinciden';
         }
@@ -51,11 +54,6 @@ if (isset($_POST['register'])) {
         exit();
     }
 }
-
-
-
-
-
 
 if (empty($_SESSION['user'])) {
     if (isset($_GET['page'])) {

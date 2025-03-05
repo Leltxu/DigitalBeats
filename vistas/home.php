@@ -1,7 +1,6 @@
 <?php
     $titulo = "Pagina Principal";
     include "header.php";
-    
 ?>
     <div class="bienvenida">
         <h2>Bienvenido a Digital Beats ❤️</h2>
@@ -26,7 +25,7 @@
         <h3>Lo mas vendido</h3>
         <div class="tarjetas">
             <?php mostrarTarjetas(mostrarProductos($conexion,'destacados')); ?>
-        </div>
+        </div> 
     </div>
 <?php
     include "footer.html";

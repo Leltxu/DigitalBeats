@@ -98,3 +98,34 @@ ul {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
 }
+
+/* Asegúrate de que el menú desplegable esté oculto por defecto */
+.despegable {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    border: 1px solid #ccc; /* Borde para visibilidad */
+}
+
+/* Mostrar el menú desplegable cuando se pasa el ratón sobre el enlace o el menú */
+.hover:hover + .despegable,
+.despegable:hover {
+    display: block;
+}
+
+/* Estilo para los enlaces del menú desplegable */
+.despegable a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Cambio de color al pasar el ratón por encima de los elementos del menú */
+.despegable a:hover {
+    background-color: #ddd;
+}
+

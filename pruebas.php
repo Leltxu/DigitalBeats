@@ -1,8 +1,6 @@
 <?php
 include 'conexion.php';
-include "modelos/model_productos.php";
+include "modelos/modelo_user.php";
 include "functions.php";
 
-$novedades=mostrarProductos($conexion,'novedades');
-print_r($novedades);
-mostrarTarjetas($novedades);
+print_r(obetenerUser($conexion, 'gmaild@gmail.com'));

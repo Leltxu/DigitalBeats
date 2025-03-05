@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +35,17 @@
         </div>
         <div class="der">
             <a href="index.php?page=cesta"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a href="controladores/controler_forms.php"><i class="fa-solid fa-user"></i> <?php if (isset($_SESSION['user'])) echo "Hola ".$_SESSION['user']?></a>
+            <?php
+            if (isset($_SESSION['user'])) {
+                echo '<a href="controladores/controler_cuenta.php" class="hover"><i class="fa-solid fa-user"></i>Hola ' . $_SESSION['user'] . '</a>';
+            } else {
+                echo '<a href="controladores/controler_forms.php"><i class="fa-solid fa-user"></i></a>';
+            }
+            ?>
+            <div class="despegable">
+                <a href="controladores/controler_cuenta.php">Mi cuenta</a>
+                <a href="index.php?page=historial">Cerrar Sesión</a>
+            </div>
         </div>
     </header>
 

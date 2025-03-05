@@ -9,9 +9,22 @@ body {
   height: 100vh;
 }
 
-.logo {
+.container {
+  width: 100%;
+  max-width: 50%;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.a-logo {
+  display: block;
+  margin: 0 auto 10px;
+  text-align: center;
+}
+.a-logo .logo {
   max-width: 100%;
-  margin-bottom: 10px;
   max-height: 150px;
 }
 
@@ -19,7 +32,7 @@ h3 {
   text-align: center;
   color: #6a90aa; 
   margin-bottom: 20px;
-  font-size: 36px;
+  font-size: 46px;
 }
 
 label {
@@ -35,6 +48,7 @@ input[type="tel"],
 input[type="email"],
 input[type="password"],
 input[type="submit"],
+input[type="date"],
 select {
   width: 100%;
   padding: 10px;
@@ -50,11 +64,14 @@ input[type="text"]:focus,
 input[type="tel"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus,
+input[type="date"]:focus,
 select:focus {
   border-color: #5a9bd6; 
   outline: none;
   box-shadow: 0px 0px 4px rgba(90, 155, 214, 0.5);
 }
+
+
 
 input[id="descripcion"] {
   height: 50px;
@@ -92,3 +109,18 @@ input[type="submit"]:active {
   background-color: #1e3d59; 
 }
 
+.error {
+  color: #ff0000; 
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+
+.row label, .row input {
+  width: 48%;
+}
+
+.mitad  {
+  width: 50%;
+  margin: auto;
+}
