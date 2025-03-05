@@ -14,7 +14,7 @@ if (isset($_POST['login'])) {
     if (empty($errores['email']) && empty($errores['contraseña'])) {
         $usuario = loginUser($conexion, $correo, $contraseña);
         if ($usuario) {
-            $_SESSION['user'] = $usuario['NOMBRE'];
+            $_SESSION = $usuario;
             header('Location: ../index.php');
             exit();
         } else {
@@ -43,8 +43,7 @@ if (isset($_POST['register'])) {
     if (empty($errores['nombre']) && empty($errores['apellidos']) && empty($errores['fecha']) && empty($errores['tlfn']) && empty($errores['email']) && empty($errores['contraseña']) && empty($errores['rcontraseña'])) {
         if ($contraseña == $rcontraseña) {
             crearUser($conexion, $nombre, $apellidos, $fecha, $telefono, $correo, $contraseña);
-            $_SESSION['user'] = $nombre;
-            header('Location: ../index.php');
+            header('Location: controler_forms.php');
             exit();
         } else {
             $errores['contraseña'] = 'Las contraseñas no coinciden';

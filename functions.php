@@ -50,3 +50,18 @@ function validarDatos($dato, $type) {
     }
     
 }
+
+function censurarCorreo($email) {
+    // Dividir el correo en nombre de usuario y dominio
+    list($usuario, $dominio) = explode('@', $email);
+    
+    // Censurar parte del nombre de usuario 
+    $usuario_censurado = substr($usuario, 0, 1) . str_repeat('*', strlen($usuario) - 1);
+    
+    // Censurar parte del dominio 
+    list($dominio_nombre, $extension) = explode('.', $dominio, 2);
+    $dominio_censurado = substr($dominio_nombre, 0, 1) . str_repeat('*', strlen($dominio_nombre) - 1) . '.' . $extension;
+    
+    // Devolver el correo censurado
+    return $usuario_censurado . '@' . $dominio_censurado;
+}

@@ -1,55 +1,76 @@
-h3 {
-    font-size: 24px;
-    color: #000000;
-    margin-top: 10px;
-    margin-left: 50px;
+h2 {
+    font-size: 28px;
+    color: #333;
     text-align: center;
+    margin-top: 20px;
     padding-bottom: 10px;
-    display: inline-block;
+    font-weight: 600;
 }
 
-.contenedor{
+.cuenta-contenedor {
     display: flex;
-
-}
-
-.datos {
-    margin-left: 50px;
-    margin: auto;
-}
-
-.datos p {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px; /* Añadí un espacio entre los elementos */
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 700px;
-    margin: 10px auto;
-    line-height: 1.6;
-    text-align: center;
 }
 
 .lateral {
-    background-color: #fff;
+    flex: 1 1 150px; /* Ajustado para mantener la flexibilidad */
+    background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 200px;
-    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Cambié de center a left */
+    margin-left: 20px;
+    margin-bottom: 20px;
 }
 
-.lateral p{
-    margin-bottom: 50px;
+.lateral a {
+    display: block; /* Para que cada enlace ocupe una línea completa */
+    font-weight: bold;
+    color: #008CBA;
+    text-decoration: none;
+    margin-bottom: 10px; /* Espacio entre los enlaces */
+    transition: color 0.3s ease;
+}
+
+.lateral a:hover {
+    color: #005f73;
+    text-decoration: underline;
+}
+
+
+.datos {
+    flex: 3 1 600px; /* El área de los datos ocupa más espacio */
+}
+
+.datos .bloque-datos {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    line-height: 1.8;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.datos .bloque-datos:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
 }
 
 a {
     font-weight: bold;
-    color: aqua;
+    color: #008CBA;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 a:hover {
+    color: #005f73;
     text-decoration: underline;
 }
-

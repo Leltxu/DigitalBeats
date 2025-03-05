@@ -12,7 +12,12 @@ if (isset($_GET['page'])) {
         include "contacto.html";
     }  else if ($_GET['page'] == 'cesta') {
         include "vistas/cesta.php";
-    } 
+    } else if ($_GET['page'] == 'close') {
+        session_start();
+        unset($_SESSION['user']);
+        session_destroy();
+        header("Location: index.php");
+    }
 }
 
 if (isset($_GET['product'])) {

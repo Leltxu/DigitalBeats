@@ -7,6 +7,7 @@ session_start();
 <html lang="en">
 
 <head>
+    <base href="/digitalbeats/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon">
@@ -36,15 +37,15 @@ session_start();
         <div class="der">
             <a href="index.php?page=cesta"><i class="fa-solid fa-cart-shopping"></i></a>
             <?php
-            if (isset($_SESSION['user'])) {
-                echo '<a href="controladores/controler_cuenta.php" class="hover"><i class="fa-solid fa-user"></i>Hola ' . $_SESSION['user'] . '</a>';
+            if (isset($_SESSION['NOMBRE'])) {
+                echo '<a href="controladores/controler_cuenta.php" class="hover"><i class="fa-solid fa-user"></i>Hola ' . $_SESSION['NOMBRE'] . '</a>';
             } else {
                 echo '<a href="controladores/controler_forms.php"><i class="fa-solid fa-user"></i></a>';
             }
             ?>
             <div class="despegable">
                 <a href="controladores/controler_cuenta.php">Mi cuenta</a>
-                <a href="index.php?page=historial">Cerrar Sesión</a>
+                <a href="index.php?page=close">Cerrar Sesión</a>
             </div>
         </div>
     </header>
