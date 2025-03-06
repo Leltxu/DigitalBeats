@@ -1,6 +1,12 @@
 <?php
 include 'conexion.php';
-include "modelos/modelo_user.php";
+include "modelos/model_productos.php";
 include "functions.php";
 
-print_r(obetenerUser($conexion, 'gmaild@gmail.com'));
+echo '<pre>';
+print_r(obtenerCategoria($conexion,1));
+echo '</pre>';
+
+echo '<pre>';
+print_r(buscarCategoria($conexion,1));
+echo '</pre>';

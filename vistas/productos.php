@@ -2,8 +2,6 @@
 $titulo = "Productos";
 include "header.php";
 
-$busqueda = $_GET['product'];
-
 ?>
 <div class="pro-contenedor">
     <div class="filtros">
@@ -63,11 +61,14 @@ $busqueda = $_GET['product'];
         </div>
     </div>
     <div class="cont-productos">
-        <h3>+<?php echo rand(10, 500) ?> resultados para "<?php  echo $producto ?>"</h3>
+        <h3>+<?php echo rand(10, 500) ?> resultados para "<?php  echo $buscar ?>"</h3>
         <div class="tarjetas">
             <?php
-
-            mostrarTarjetas(buscarProducto($conexion,$busqueda));
+            if (isset($producto)) {
+                mostrarTarjetas(buscarProducto($conexion, $producto));
+            } else if (isset($categoria)) {
+                mostrarTarjetas(buscarCategoria($conexion, $_GET['categoria']));
+            }
             ?>
         </div>
     </div>

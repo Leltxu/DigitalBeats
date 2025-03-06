@@ -9,7 +9,7 @@ include "header.php";
         <a href="">Pedidos anteriores</a>
         <a href="cesta.php">Mi cesta</a>
         <a href="">Mis opiniones</a>
-        <a href="cerrarsesion">Cerrar sesion</a>
+        <a href="index.php?page=close">Cerrar sesion</a>
     </div> 
     
     <div class="datos">

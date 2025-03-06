@@ -45,58 +45,35 @@
         </div>
     </header>
 
-
-
     <div class="overlay"></div>
     <aside class="menu">
         <div class="menu-header">
             <h3>Categorías</h3>
             <span class="close-btn">&times;</span>
         </div>
-        <!-- Categorias Provisionales-->
+        <!-- Categorias Dinámicas -->
+         
         <ul>
-            <li>
-                Ordenadores
-                <ul>
-                    <li>Portátiles</li>
-                    <li>Sobremesa</li>
-                    <li>Accesorios</li>
-                </ul>
-            </li>
-            <li>
-                Componentes
-                <ul>
-                    <li>Procesadores</li>
-                    <li>Tarjetas Gráficas</li>
-                    <li>Placas Base</li>
-                    <li>Memorias RAM</li>
-                </ul>
-            </li>
-            <li>
-                Sonido
-                <ul>
-                    <li>Auriculares</li>
-                    <li>Altavoces</li>
-                    <li>Micrófonos</li>
-                    <li>Sistemas de Sonido</li>
-                </ul>
-            </li>
-            <li>
-                Periféricos
-                <ul>
-                    <li>Teclados</li>
-                    <li>Ratones</li>
-                    <li>Monitores</li>
-                </ul>
-            </li>
-            <li>
-                Almacenamiento
-                <ul>
-                    <li>Discos Duros</li>
-                    <li>SSD</li>
-                    <li>Pendrives</li>
-                </ul>
-            </li>
+            <?php
+            include_once 'conexion.php';
+            include_once 'modelos/model_productos.php';
+
+            $categorias = categorias($conexion);
+            
+            foreach ($categorias as $categoria) {
+                echo '<li><a href="index.php?categoria=' . $categoria['ID_CATEGORIA'] . '">' . $categoria['NOMBRE'] . '</a>';
+                if (!empty($categoria['hijos'])) {
+                    echo '<ul>';
+                    foreach ($categoria['hijos'] as $subcategoria) {
+                        echo '<li><a href="index.php?categoria=' . $subcategoria['ID_CATEGORIA'] . '">' . $subcategoria['NOMBRE'] . '</a></li>';
+                    }
+                    echo '</ul>';
+                }
+                echo '</li>';
+            }
+            ?>
         </ul>
     </aside>
     <script src="js/menu.js"></script>
+</body>
+</html>
