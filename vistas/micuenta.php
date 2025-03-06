@@ -28,21 +28,21 @@ include "header.php";
                 <li><b>Email: </b><?php echo censurarCorreo($_SESSION['CORREO_ELECTRONICO']) ?></li>
                 <li><b>Telefono: </b><?php echo $_SESSION['TELEFONO']?></li>
             </ul>
-            <a href="">Modificar Informacion</a>
+            <a href="controladores/controler_cuenta.php?page=contacto">Modificar Informacion</a>
         </div>
         <div class="bloque-datos">
             <h3>Contraseña</h3>
             <ul>
                 <li><b>Contraseña: </b>********</li>
             </ul>
-            <a href="">Cambiar Contraseña</a>
+            <a href="controladores/controler_cuenta.php?page=pass">Cambiar Contraseña</a>
         </div>
         <div class="bloque-datos">
             <h3>Dirección de envio</h3>
             <ul>
                 <li><b>Direccion: </b><?php echo $_SESSION['DIRECCION']?></li>
             </ul>
-            <a href="">Modificar Informacion</a>
+            <a href="controladores/controler_cuenta.php?page=direccion">Modificar Informacion</a>
 
         </div>
     </div>

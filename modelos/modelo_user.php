@@ -44,3 +44,24 @@ function loginUser($conexion, $email, $password) {
         echo "No se ha podido iniciar sesion";
     }
 }
+
+function actualizarDatos($conexion,$nombre,$apellidos,$fecha,$email){
+    $sql = "UPDATE usuarios SET NOMBRE = '$nombre', APELLIDOS = '$apellidos', FECHA_NACIMIENTO = '$fecha' WHERE CORREO_ELECTRONICO = '$email'";
+    mysqli_query($conexion, $sql);
+}
+
+function actualizarContacto($conexion,$telefono,$email){
+    $sql = "UPDATE usuarios SET TELEFONO = '$telefono' WHERE CORREO_ELECTRONICO = '$email'";
+    mysqli_query($conexion, $sql);
+}
+
+function actualizarPass($conexion,$password,$email){
+    $password = password_hash($password, PASSWORD_DEFAULT);
+    $sql = "UPDATE usuarios SET PASSWORD = '$password' WHERE CORREO_ELECTRONICO = '$email'";
+    mysqli_query($conexion, $sql);
+}
+
+function actualizarDireccion($conexion,$direccion,$email){
+    $sql = "UPDATE usuarios SET DIRECCION = '$direccion' WHERE CORREO_ELECTRONICO = '$email'";
+    mysqli_query($conexion, $sql);
+}

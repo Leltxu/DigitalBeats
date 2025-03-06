@@ -129,3 +129,8 @@ ul {
     background-color: #ddd;
 }
 
+.error {
+    color: #ff0000; 
+    font-size: 14px;
+    margin-bottom: 15px;
+}

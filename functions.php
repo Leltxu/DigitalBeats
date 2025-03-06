@@ -45,6 +45,8 @@ function validarDatos($dato, $type) {
         } else if ($type == 'tel') {
             if (!is_numeric($dato)) {
                 return 'El telefono no es valido';
+            } else if (strlen($dato) != 9) {
+                return 'El telefono debe tener 9 digitos';
             }
         }
     }
