@@ -7,6 +7,15 @@ h2 {
     font-weight: 600;
 }
 
+h3 {
+    font-size: 20px;
+    color: #444;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
 .cuenta-contenedor {
     display: flex;
     justify-content: space-between;
@@ -22,17 +31,17 @@ h2 {
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left; /* Cambié de center a left */
+    text-align: left;
     margin-left: 20px;
     margin-bottom: 20px;
 }
 
 .lateral a {
-    display: block; /* Para que cada enlace ocupe una línea completa */
+    display: block;
     font-weight: bold;
     color: #008CBA;
     text-decoration: none;
-    margin-bottom: 10px; /* Espacio entre los enlaces */
+    margin-bottom: 10px;
     transition: color 0.3s ease;
 }
 
@@ -41,9 +50,8 @@ h2 {
     text-decoration: underline;
 }
 
-
 .datos {
-    flex: 3 1 600px; /* El área de los datos ocupa más espacio */
+    flex: 3 1 600px;
 }
 
 .datos .bloque-datos {
@@ -58,19 +66,103 @@ h2 {
     transition: all 0.3s ease;
 }
 
+/* Aumento del padding en los <ul> para mover los <li> a la derecha */
+.datos .bloque-datos ul {
+    padding-left: 20px; 
+}
+
 .datos .bloque-datos:hover {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
     transform: translateY(-5px);
 }
 
-a {
+.datos .bloque-datos a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #008CBA;
+    color: white;
     font-weight: bold;
-    color: #008CBA;
+    border-radius: 5px;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: background 0.3s ease;
 }
 
-a:hover {
-    color: #005f73;
-    text-decoration: underline;
+.datos .bloque-datos a:hover {
+    background-color: #005f73;
 }
+
+.formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 50%;
+    
+}
+
+.h3-form {
+    text-align: center;
+    color: #6a90aa; 
+    margin-bottom: 20px;
+    font-size: 46px;
+    border: none;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #2a4d69; 
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+input[type="submit"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #cfd8e3; 
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+select:focus {
+  border-color: #5a9bd6; 
+  outline: none;
+  box-shadow: 0px 0px 4px rgba(90, 155, 214, 0.5);
+}
+
+input[type="submit"] {
+    background-color: #2a4d69; 
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #3e7ca8; 
+  }
+  
+  input[type="submit"]:active {
+    background-color: #1e3d59; 
+  }

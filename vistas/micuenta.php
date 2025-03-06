@@ -20,7 +20,7 @@ include "header.php";
                 <li><b>Apellidos: </b> <?php echo $_SESSION['APELLIDOS']?></li>
                 <li><b>Fecha de nacimiento: </b><?php echo $_SESSION['FECHA_NACIMIENTO'] ?></li>
             </ul>
-            <a href="">Modificar Informacion</a>
+            <a href="controladores/controler_cuenta.php?page=datos">Modificar Informacion</a>
         </div>
         <div class="bloque-datos">
             <h3>Datos de contacto</h3>
@@ -39,7 +39,9 @@ include "header.php";
         </div>
         <div class="bloque-datos">
             <h3>Dirección de envio</h3>
-            <p>Direccion:</p>
+            <ul>
+                <li><b>Direccion: </b><?php echo $_SESSION['DIRECCION']?></li>
+            </ul>
             <a href="">Modificar Informacion</a>
 
         </div>
