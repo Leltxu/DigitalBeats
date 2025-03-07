@@ -44,8 +44,8 @@ function estrellas($conexion,$id) {
     return $resultado[0];
 }
 
-function obtenerEstellas($conexion,$id_producto,$id_cliente) {
-    $sql = "SELECT VALORACION FROM opiniones WHERE id_producto=$id_producto AND id_cliente=$id_cliente";
+function obtenerEstellas($conexion,$id,$id_producto,$id_cliente) {
+    $sql = "SELECT VALORACION FROM opiniones WHERE id_opinion=$id AND id_producto=$id_producto AND id_cliente=$id_cliente";
     $query = mysqli_query($conexion, $sql);
     $resultado=[];
     while ($fila = mysqli_fetch_assoc($query)){

@@ -71,7 +71,7 @@ include '../vistas/header.php';
     foreach ($opiniones as $opinion) {
         echo '<div class="opinion">';
         echo '<p class="o-nombre">' . $opinion['NOMBRE'].' ';
-        $valoracion = obtenerEstellas($conexion, $opinion['ID_PRODUCTO'], $opinion['ID_CLIENTE']);
+        $valoracion = obtenerEstellas($conexion,$opinion['ID_OPINION'], $opinion['ID_PRODUCTO'], $opinion['ID_CLIENTE']);
         $valoracion = $valoracion['VALORACION'];
         $cont = 0;
         if ($valoracion > 0) {
