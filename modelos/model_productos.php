@@ -25,7 +25,7 @@ function mostrarProductos($conexion, $tipo) {
 
 
 function mostrarDetallesProducto($conexion,$id) {
-    $sql = "SELECT * FROM productos WHERE id = $id";
+    $sql = "SELECT * FROM productos WHERE ID_PRODUCTO = $id";
     $query = mysqli_query($conexion, $sql);
     $resultado=[];
     while ($fila = mysqli_fetch_assoc($query)){
@@ -54,6 +54,20 @@ function buscarProducto($conexion,$busqueda) {
     return $resultado;
 }
 
+function obtenerOpiniones($conexion, $id) {
+    $sql = "SELECT opiniones.*, usuarios.nombre AS NOMBRE 
+            FROM opiniones 
+            JOIN usuarios ON opiniones.id_cliente = usuarios.id_cliente
+            WHERE id_producto = $id";
+    $query = mysqli_query($conexion, $sql);
+    $resultado = [];
+    while ($fila = mysqli_fetch_assoc($query)) {
+        $resultado[] = $fila;
+    }
+    return $resultado;
+}
+
+// CATEGORIAS
 function obtenerCategoria($conexion, $id) {
     // Asegúrate de que $id sea un valor entero
     $id = intval($id);

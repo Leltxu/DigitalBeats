@@ -4,6 +4,7 @@
 @import "productos.css";
 @import "micuenta.css";
 @import "cesta.css";
+@import "detalle_producto.css";
 
 * {
     margin: 0;

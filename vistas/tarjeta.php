@@ -1,6 +1,9 @@
 <?php
-    include 'conexion.php';
+    if (!isset($conexion)) {
+        include '../conexion.php';
+    }
 ?>
+
 <head>
     <link rel="stylesheet" href="../css/main.css">
 </head>
