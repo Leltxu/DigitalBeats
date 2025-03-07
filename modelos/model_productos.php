@@ -44,6 +44,16 @@ function estrellas($conexion,$id) {
     return $resultado[0];
 }
 
+function obtenerEstellas($conexion,$id_producto,$id_cliente) {
+    $sql = "SELECT VALORACION FROM opiniones WHERE id_producto=$id_producto AND id_cliente=$id_cliente";
+    $query = mysqli_query($conexion, $sql);
+    $resultado=[];
+    while ($fila = mysqli_fetch_assoc($query)){
+        $resultado[] = $fila;
+    }
+    return $resultado[0];
+}
+
 function buscarProducto($conexion,$busqueda) {
     $sql = "SELECT * FROM productos WHERE nombre LIKE '%$busqueda%'";
     $query = mysqli_query($conexion, $sql);
@@ -58,7 +68,8 @@ function obtenerOpiniones($conexion, $id) {
     $sql = "SELECT opiniones.*, usuarios.nombre AS NOMBRE 
             FROM opiniones 
             JOIN usuarios ON opiniones.id_cliente = usuarios.id_cliente
-            WHERE id_producto = $id";
+            WHERE id_producto = $id
+            LIMIT 10";
     $query = mysqli_query($conexion, $sql);
     $resultado = [];
     while ($fila = mysqli_fetch_assoc($query)) {
@@ -129,4 +140,11 @@ function buscarCategoria($conexion, $id) {
     }
 
     return $resultado;
+}
+
+//Opiniones
+
+function insertarOpinion($conexion, $id_producto, $id_cliente, $valoracion, $opinion) {
+    $sql = "INSERT INTO opiniones (id_producto, id_cliente, valoracion, comentario) VALUES ($id_producto, $id_cliente, $valoracion, '$opinion')";
+    mysqli_query($conexion, $sql);
 }

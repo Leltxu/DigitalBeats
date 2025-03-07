@@ -1,6 +1,6 @@
 <?php
     if (!isset($conexion)) {
-        include '../conexion.php';
+        require __DIR__ . '/../conexion.php';
     }
 ?>
 

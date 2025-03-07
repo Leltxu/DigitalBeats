@@ -5,6 +5,22 @@ require '../conexion.php';
 include '../functions.php';
 include '../modelos/model_productos.php';
 
+if (isset($_POST['opinion'])) {
+    $id = $_POST['id'];
+    $estrellas = $_POST['estrellas'];
+    $comentario = sanearDatos($_POST['comentario']);
+    $id_cliente = $_SESSION['ID_CLIENTE'];
+    
+    $errores = [];
+    $errores['estrellas'] = validarDatos($estrellas, 'number');
+    $errores['comentario'] = validarDatos($comentario, 'empty');
+
+    if (empty($errores['estrellas']) && empty($errores['comentario'])) {
+        insertarOpinion($conexion, $id, $id_cliente, $estrellas, $comentario);
+        unset($_POST);
+    }
+}
+
 if (!isset($_GET['product'])) {
     header('Location: ../index.php');
 } else {
@@ -19,12 +35,15 @@ if (!isset($_GET['product'])) {
     }
 
     $catPadre=obtenerCategoria($conexion, $detalleProducto['ID_CATEGORIA'])['CATEGORIA_PADRE'];
+    if ($catPadre == 0) {
+        $catPadre = $detalleProducto['ID_CATEGORIA'];
+    }
     $relacionados=buscarCategoria($conexion, $catPadre);
 
     // Filtrar el producto actual de los relacionados
     $relacionados = array_filter($relacionados, function($producto) use ($detalleProducto) {
         return $producto['ID_PRODUCTO'] !== $detalleProducto['ID_PRODUCTO'];
     });
-
+ 
     include '../vistas/mostrar_producto.php';
 }

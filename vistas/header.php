@@ -1,3 +1,9 @@
+<?php
+    if (!isset($conexion)) {
+        require __DIR__ . '/../conexion.php';
+        include 'modelos/model_productos.php';
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,8 +61,6 @@
          
         <ul>
             <?php
-            include_once 'conexion.php';
-            include_once 'modelos/model_productos.php';
 
             $categorias = categorias($conexion);
             

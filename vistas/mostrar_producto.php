@@ -47,18 +47,18 @@ include '../vistas/header.php';
     </div>
 </div>
 
-<div class="pr-opiniones">
+<div id="opiniones" class="pr-opiniones">
     <h3>Opiniones</h3>
     <?php
     if (isset($_SESSION['NOMBRE'])) {
         ?>
-        <form action="../controladores/controler_opiniones.php" method="post">
+        <form action="controladores/controler_producto.php?product=<?php echo $_GET['product']?>#opiniones" method="post">
             <input type="hidden" name="id" value="<?php echo $detalleProducto['ID_PRODUCTO']; ?>">
-            <label for="estrellas">Valoracion</label>
-            <input type="number" name="estrellas" min="1" max="5">
-            <label for="opinion">Opinion</label>
-            <textarea name="opinion" placeholder="Escribe tu opinión"></textarea>
-            <button type="submit">Enviar</button>
+            <label for="estrellas">Valoracion (1-10) <span class="error"><?php if (isset($errores['estrellas'])) echo $errores['estrellas'] ?></span></label>
+            <input type="number" name="estrellas" min="1" max="10" <?php if (isset($_POST['estrellas'])) echo 'value="' . $_POST['estrellas'] . '"' ?>>
+            <label for="opinion">Opinion <span class="error"><?php if (isset($errores['comentario'])) echo $errores['comentario'] ?></span></label>
+            <textarea name="comentario" placeholder="Escribe tu opinión"><?php if (isset($_POST['comentario'])) echo $_POST['comentario']?></textarea>
+            <button type="submit" name="opinion">Enviar</button>
         </form>
         <?php
     } else {
@@ -70,9 +70,26 @@ include '../vistas/header.php';
     $opiniones = obtenerOpiniones($conexion, $detalleProducto['ID_PRODUCTO']);
     foreach ($opiniones as $opinion) {
         echo '<div class="opinion">';
-        echo '<p>' . $opinion['NOMBRE'] . '</p>';
-        echo '<p>' . $opinion['COMENTARIO'] . '</p>';
-        echo '<p>' . $opinion['VALORACION'] . ' estrellas</p>';
+        echo '<p class="o-nombre">' . $opinion['NOMBRE'].' ';
+        $valoracion = obtenerEstellas($conexion, $opinion['ID_PRODUCTO'], $opinion['ID_CLIENTE']);
+        $valoracion = $valoracion['VALORACION'];
+        $cont = 0;
+        if ($valoracion > 0) {
+            while ($cont < 5) {
+                if ($valoracion > 1) {
+                    echo "<span class='pr-estrella'><i class='fas fa-star'></i></span>";
+                    $valoracion = $valoracion - 2;
+                } else if ($valoracion == 1) {
+                    echo "<span class='pr-estrella'><i class='fas fa-star-half-alt'></i></span>";
+                    $valoracion--;
+                } else {
+                    echo "<span class='pr-estrella'><i class='far fa-star'></i></span>";
+                }
+                $cont++;
+            }
+        }
+        echo '</p>';
+        echo '<p class="o-coment">' . $opinion['COMENTARIO'] . '</p>';
         echo '</div>';
     }
     ?>
