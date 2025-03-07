@@ -1,8 +1,8 @@
 <?php
     if (!isset($conexion)) {
         require __DIR__ . '/../conexion.php';
-        include 'modelos/model_productos.php';
     }
+    include __DIR__ . '/../modelos/model_productos.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
