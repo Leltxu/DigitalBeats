@@ -4,6 +4,17 @@ include "functions.php";
 include "modelos/model_productos.php";
 require_once "conexion.php";
 
+if (isset($_POST['actualizar'])) {
+    $id = $_POST['id'];
+    $cantidad = $_POST['cantidad'];
+    $_SESSION['cesta'][$id]['cantidad'] = $cantidad;
+}
+
+if (isset($_POST['borrar'])) {
+    $id = $_POST['id'];
+    unset($_SESSION['cesta'][$id]);
+}
+
 if (!isset($_GET['page']) && !isset($_GET['product']) && !isset($_GET['categoria'])) {
     include "vistas/home.php";
     exit();

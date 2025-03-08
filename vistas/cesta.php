@@ -1,5 +1,5 @@
 <?php
-$titulo='Cesta';
+$titulo = 'Cesta';
 include 'header.php';
 ?>
 
@@ -8,102 +8,103 @@ include 'header.php';
     <div class="c-productos">
         <h2>Cesta</h2>
 
-        <!-- Producto 1 -->
-        <div class="c-producto">
-            <div class="foto">
-                <img src="img/productos/1636-intel-core-i5-12400f-44-ghz.webp" alt="Imagen de Producto 1">
-            </div>
-            <div class="c-texto">
-                <p>Producto 1</p>
-                <label for="cantidad1">Cantidad</label>
-                <select name="cantidad1" id="cantidad1">
-                    <?php
-                    for ($i = 1; $i <= 10; $i++) {
-                        echo "<option value='$i'>$i</option>";
-                    }
-                    ?>
-                </select>
-                <p>$20.00</p>
-            </div>
-        </div>
-
-        <!-- Producto 2 -->
-        <div class="c-producto">
-            <div class="foto">
-                <img src="img/productos/1636-intel-core-i5-12400f-44-ghz.webp" alt="Imagen de Producto 2">
-            </div>
-            <div class="c-texto">
-                <p>Producto 2</p>
-                <label for="cantidad2">Cantidad</label>
-                <select name="cantidad2" id="cantidad2">
-                    <?php
-                    for ($i = 1; $i <= 10; $i++) {
-                        echo "<option value='$i'>$i</option>";
-                    }
-                    ?>
-                </select>
-                <p>$10.00</p>
-            </div>
-        </div>
+        <?php
+        if (isset($_SESSION['cesta']) && count($_SESSION['cesta']) > 0) {
+            $totalProductos = 0;
+            $precioTotal = 0;
+            foreach ($_SESSION['cesta'] as $key => $producto) {
+                $detalleProducto = mostrarDetallesProducto($conexion, $producto['producto']);
+                $precio = $detalleProducto['PRECIO_DESCUENTO'] == 0 ? $detalleProducto['PRECIO'] : $detalleProducto['PRECIO_DESCUENTO'];
+                echo "<div class='c-producto'>
+                        <div class='foto'>
+                            <img src='$detalleProducto[FOTO]' alt='$detalleProducto[NOMBRE]'>
+                        </div>
+                        <div class='c-texto'>
+                            <p>$detalleProducto[NOMBRE]</p>
+                            <label for='cantidad1'>Cantidad</label>
+                            <form action='index.php?page=cesta' method='post'>
+                                <input type='hidden' name='id' value='$key'>
+                                <input type='number' name='cantidad' value='$producto[cantidad]' min='1' max='15'>
+                                <button type='submit' name='actualizar'>Actualizar</button>
+                            </form>
+                            <form action='index.php?page=cesta' method='post'>
+                                <input type='hidden' name='id' value='$key'>
+                                <button type='submit' name='borrar'>Eliminar</button>
+                            </form>
+                            <p>$$precio</p>
+                        </div>
+                    </div>";
+                $totalProductos++;
+                $precioTotal = $precioTotal + ($precio * $producto['cantidad']);
+                if ($totalProductos == 0) {
+                    $similares = null;
+                    $relacionados = null;
+                } else if ($totalProductos == 1) {
+                    $relacionados = $detalleProducto['ID_CATEGORIA'];
+                    $similares = $detalleProducto['ID_CATEGORIA'];
+                } else if ($totalProductos == 2) {
+                    $similares = $detalleProducto['ID_CATEGORIA'];
+                }
+                $lsitaProductos[] = $detalleProducto['ID_PRODUCTO'];
+            }
+        } else {
+            $precioTotal = 0;
+            $totalProductos = 0;
+            echo "<p>No hay productos en la cesta</p>";
+        }
+        ?>
     </div>
-
     <!-- Sección de totales y productos relacionados -->
     <div class="c-total-relacionados">
         <!-- Total -->
         <div class="c-total">
-            <p>Subtotal (5 productos): $50.00</p>
+            <p>Subtotal (<?php echo $totalProductos ?> productos): <?php echo $precioTotal ?>€</p>
             <input type="submit" value="Tramitar Pedido">
         </div>
 
         <!-- Productos Relacionados -->
-        <div class="c-relacionados">
-            <p>Productos Relacionados</p>
-            <div class="c-scroll">
+        <?php
+        if (isset($relacionados) && $relacionados != null) {
+            ?>
+            <div class="c-relacionados">
+                <p>Productos Relacionados</p>
+                <div class="c-scroll">
+                <?php
 
+                $lista = categoriasProductos($conexion, $relacionados, $lsitaProductos);
 
-                <div class="c-producto-relacionado">
-                    <div class="c-relacionado-img">
-                        <img src="img/productos/1636-intel-core-i5-12400f-44-ghz.webp" alt="Imagen de Relación 1">
-                    </div>
-                    <div class="c-relacionado-texto">
-                        <p>Relación 1</p>
-                        <p>$18.00</p>
-                    </div>
-                </div>
-                <div class="c-producto-relacionado">
-                    <div class="c-relacionado-img">
-                        <img src="img/productos/1636-intel-core-i5-12400f-44-ghz.webp" alt="Imagen de Relación 1">
-                    </div>
-                    <div class="c-relacionado-texto">
-                        <p>Relación 1</p>
-                        <p>$18.00</p>
-                    </div>
-                </div>
-                <div class="c-producto-relacionado">
-                    <div class="c-relacionado-img">
-                        <img src="img/productos/1636-intel-core-i5-12400f-44-ghz.webp" alt="Imagen de Relación 1">
-                    </div>
-                    <div class="c-relacionado-texto">
-                        <p>Relación 1</p>
-                        <p>$18.00</p>
-                    </div>
+                if (count($lista) > 0) {
+                    mostrarTarjetas($lista);
+                } else {
+                    echo "<p>No se a encontrado productos relacionados</p>";
+                }
+                ?>
                 </div>
             </div>
-        </div>
+            <?php
+        }
+        ?>  
     </div>
+</div>
+<!-- Productos similares -->
+<?php
 
-    <!-- Productos similares -->
+if (isset($similares) && $similares != null) {
+    ?>
     <div class="similares">
         <p>Similares</p>
-        <div class="producto-similar">
-            <p>Producto Similar 1</p>
-            <p>$15.00</p>
-        </div>
-        <div class="producto-similar">
-            <p>Producto Similar 2</p>
-            <p>$18.00</p>
-        </div>
+        <?php
+            $listaSimilares=buscarCategoria($conexion, $similares);
+            if (count($listaSimilares) > 0) {
+                mostrarTarjetas($listaSimilares);
+            } else {
+                echo "<p>No se a encontrado productos similares</p>";
+            }
+        ?>
     </div>
+    <?php
+}
+?>
 </div>
 
 <?php

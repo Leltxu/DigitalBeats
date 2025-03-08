@@ -142,6 +142,20 @@ function buscarCategoria($conexion, $id) {
     return $resultado;
 }
 
+function categoriasProductos($conexion, $id, $productos) {
+    // Convertir el array de productos en una cadena separada por comas
+    $productos_str = implode(',', $productos);
+    
+    // Modificar la consulta para excluir los productos en el array
+    $sql = "SELECT * FROM productos WHERE ID_CATEGORIA = $id AND ID_PRODUCTO NOT IN ($productos_str)";
+    $query = mysqli_query($conexion, $sql);
+    $resultado = [];
+    while ($fila = mysqli_fetch_assoc($query)) {
+        $resultado[] = $fila;
+    }
+    return $resultado;
+}
+
 //Opiniones
 
 function insertarOpinion($conexion, $id_producto, $id_cliente, $valoracion, $opinion) {

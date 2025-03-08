@@ -21,10 +21,10 @@ include '../vistas/header.php';
                 ?>
             </ul>
             </p>
-            <form action="../controladores/controler_cesta.php" method="post">
+            <form action="controladores/controler_producto.php?product=<?php echo $_GET['product']; ?>" method="post">
                 <input type="hidden" name="id" value="<?php echo $detalleProducto['ID_PRODUCTO']; ?>">
                 <input type="number" name="cantidad" value="1" min="1" max="15">
-                <button type="submit">Añadir al carrito</button>
+                <button type="submit" name="cesta">Añadir al carrito</button>
             </form>
         </div>
         <div class="precio">

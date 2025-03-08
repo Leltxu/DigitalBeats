@@ -21,6 +21,16 @@ if (isset($_POST['opinion'])) {
     }
 }
 
+if (isset($_POST['cesta'])) {
+    $id = sanearDatos($_POST['id']);
+    $cantidad = sanearDatos($_POST['cantidad']);
+    $cesta=["producto" => $id, "cantidad"=>$cantidad];
+    if (!isset($_SESSION['cesta'])) {
+        $_SESSION['cesta']=[];
+    }
+    array_push($_SESSION['cesta'], $cesta);
+}
+
 if (!isset($_GET['product'])) {
     header('Location: ../index.php');
 } else {
