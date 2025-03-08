@@ -29,7 +29,7 @@ include 'header.php';
                             </form>
                             <form action='index.php?page=cesta' method='post'>
                                 <input type='hidden' name='id' value='$key'>
-                                <button type='submit' name='borrar'>Eliminar</button>
+                                <button type='submit' name='borrar'>Quitar</button>
                             </form>
                             <p>$$precio</p>
                         </div>
@@ -69,21 +69,21 @@ include 'header.php';
             <div class="c-relacionados">
                 <p>Productos Relacionados</p>
                 <div class="c-scroll">
-                <?php
+                    <?php
 
-                $lista = categoriasProductos($conexion, $relacionados, $lsitaProductos);
+                    $lista = categoriasProductos($conexion, $relacionados, $lsitaProductos);
 
-                if (count($lista) > 0) {
-                    mostrarTarjetas($lista);
-                } else {
-                    echo "<p>No se a encontrado productos relacionados</p>";
-                }
-                ?>
+                    if (count($lista) > 0) {
+                        mostrarTarjetas($lista);
+                    } else {
+                        echo "<p>No se a encontrado productos relacionados</p>";
+                    }
+                    ?>
                 </div>
             </div>
             <?php
         }
-        ?>  
+        ?>
     </div>
 </div>
 <!-- Productos similares -->
@@ -93,14 +93,16 @@ if (isset($similares) && $similares != null) {
     ?>
     <div class="similares">
         <p>Similares</p>
-        <?php
-            $listaSimilares=buscarCategoria($conexion, $similares);
+        <div class="pr-similares">
+            <?php
+            $listaSimilares = buscarCategoriaProductos($conexion, $similares, $lsitaProductos);
             if (count($listaSimilares) > 0) {
                 mostrarTarjetas($listaSimilares);
             } else {
                 echo "<p>No se a encontrado productos similares</p>";
             }
-        ?>
+            ?>
+        </div>
     </div>
     <?php
 }
