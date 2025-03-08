@@ -11,7 +11,7 @@ if (!isset($_GET['page']) && !isset($_GET['product']) && !isset($_GET['categoria
 
 if (isset($_GET['page'])) {
     if ($_GET['page'] == 'contacto') {
-        include "contacto.html";
+        include "../vistas/contacto.html";
     }  else if ($_GET['page'] == 'cesta') {
         include "vistas/cesta.php";
     } else if ($_GET['page'] == 'close') {

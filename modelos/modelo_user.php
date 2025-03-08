@@ -22,7 +22,7 @@ function obetenerUser($conexion, $email){
 
 function crearUser($conexion, $nombre, $apellidos, $fecha, $telefono, $correo, $contraseña) {
     $contraseña = password_hash($contraseña, PASSWORD_DEFAULT);
-    $sql = "INSERT INTO usuarios (NOMBRE, APELLIDOS, FECHA_NACIMIENTO, TELEFONO, CORREO_ELECTRONICO, PASSWORD) VALUES ('$nombre', '$apellidos', '$fecha', '$telefono', '$correo', '$contraseña')";
+    $sql = "INSERT INTO usuarios (NOMBRE, APELLIDOS, FECHA_NACIMIENTO, TELEFONO, CORREO_ELECTRONICO, `PASSWORD`) VALUES ('$nombre', '$apellidos', '$fecha', '$telefono', '$correo', '$contraseña')";
     mysqli_query($conexion, $sql);
 }
 
@@ -65,3 +65,12 @@ function actualizarDireccion($conexion,$direccion,$email){
     $sql = "UPDATE usuarios SET DIRECCION = '$direccion' WHERE CORREO_ELECTRONICO = '$email'";
     mysqli_query($conexion, $sql);
 }
+
+function correoExiste($conexion,$email) {
+    $sql ="SELECT CORREO_ELECTRONICO FROM usuarios WHERE CORREO_ELECTRONICO = '$email'";   
+    $resul=mysqli_query($conexion, $sql);
+    if (mysqli_num_rows($resul) > 0) {
+        return "Este correo electrónico ya está registrado.";
+    }
+}
+

@@ -39,6 +39,7 @@ if (isset($_POST['register'])) {
     $errores['fecha'] = validarDatos($fecha, 'text');
     $errores['tlfn'] = validarDatos($telefono, 'tel');
     $errores['email'] = validarDatos($correo, 'email');
+    $errores['email'] = correoExiste($conexion,$correo);
     $errores['contraseña'] = validarDatos($contraseña, 'password');
     if (empty($errores['nombre']) && empty($errores['apellidos']) && empty($errores['fecha']) && empty($errores['tlfn']) && empty($errores['email']) && empty($errores['contraseña']) && empty($errores['rcontraseña'])) {
         if ($contraseña == $rcontraseña) {
