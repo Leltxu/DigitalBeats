@@ -64,6 +64,7 @@ if (empty($_SESSION['user'])) {
         }
     } else {
         include "../vistas/login.php";
+        
     }
 }  else {
     include "../vistas/micuenta.php";
@@ -73,6 +74,20 @@ if (empty($_SESSION['user'])) {
 if (isset($_POST['Enviar'])) {
     $nombre = sanearDatos($_POST['nombre']);
     $correo = sanearDatos($_POST['email']);
+    $motivo = sanearDatos($_POST['opciones']);
+    $pedido = sanearDatos($_POST['pedido']);
+    $descripcion = sanearDatos($_POST['descripcion']);
+
+    $errores = [];
     $errores['nombre'] = validarDatos($nombre, 'text');
     $errores['email'] = validarDatos($correo, 'email');
+    $errores['descripcion'] = validarDatos($descripcion, 'text');
+
+    if (empty($errores)) {
+        
+    }
+
+    include "../vistas/contacto.php";
+    exit();
 }
+

@@ -74,3 +74,7 @@ function correoExiste($conexion,$email) {
     }
 }
 
+function Contacto($conexion,$nombre,$correo,$motivo,$pedido,$descripcion){
+    $sql ="INSERT INTO MENSAJES (CORREO_ELECTRONICO, DESCRIPCION, NOMBRE,MOTIVO_CONTACTO, NUMERO_PEDIDO)"   
+    $resul=mysqli_query($conexion, $sql);
+}
