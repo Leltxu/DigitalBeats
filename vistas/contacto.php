@@ -9,7 +9,7 @@
 <body>
     
     <form action="">
-        <a href="../index.php" class="a-logo"><img src="assets/img/logo.png" alt="logo" class="logo"></a>
+        <a href="index.php" class="a-logo"><img src="assets/img/logo.png" alt="logo" class="logo"></a>
        
         <label for="email">Correo Electronico</label>
         <input type="email" name="email" id="email"><br>
@@ -20,7 +20,7 @@
         <label for="motivo">Motivo de contacto</label>
         <select id="opciones" name="opciones">
             
-            <option value="prob" selected>Problemas con mi pedido</option>
+            <option value="problemas" selected>Problemas con mi pedido</option>
             <option value="curriculum">👷🏿Quiero trabajar aqui</option>
             <option value="otro">📓Otro motivo</option>
         </select><br>

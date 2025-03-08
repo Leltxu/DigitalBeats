@@ -16,6 +16,24 @@ if (isset($_POST['borrar'])) {
     unset($_SESSION['cesta'][$id]);
 }
 
+if (isset($_POST['contacto'])) {
+    $email = sanearDatos($_POST['email']);
+    $nombre = sanearDatos($_POST['nombre']);
+    $motivo = sanearDatos($_POST['opciones']);
+    $pedido = sanearDatos($_POST['pedido']);
+    $descripcion = sanearDatos($_POST['descripcion']);
+
+    $errores = [];
+    $errores['email'] = validarDatos($email, 'email');
+    $errores['nombre'] = validarDatos($nombre, 'text');
+    $errores['descripcion'] = validarDatos($descripcion, 'text');
+
+    if (empty($errores['email']) && empty($errores['nombre']) && empty($errores['descripcion'])) {
+        
+    }
+
+}
+
 if (!isset($_GET['page']) && !isset($_GET['product']) && !isset($_GET['categoria'])) {
     include "vistas/home.php";
     exit();
@@ -23,7 +41,7 @@ if (!isset($_GET['page']) && !isset($_GET['product']) && !isset($_GET['categoria
 
 if (isset($_GET['page'])) {
     if ($_GET['page'] == 'contacto') {
-        include "vistas/contacto.html";
+        include "vistas/contacto.php";
     }  else if ($_GET['page'] == 'cesta') {
         include "vistas/cesta.php";
     } else if ($_GET['page'] == 'close') {
