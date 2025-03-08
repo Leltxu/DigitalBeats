@@ -15,14 +15,15 @@ include 'header.php';
             foreach ($_SESSION['cesta'] as $key => $producto) {
                 $detalleProducto = mostrarDetallesProducto($conexion, $producto['producto']);
                 $precio = $detalleProducto['PRECIO_DESCUENTO'] == 0 ? $detalleProducto['PRECIO'] : $detalleProducto['PRECIO_DESCUENTO'];
+                $totalCadaProducto=$precio*$producto['cantidad'];
                 echo "<div class='c-producto'>
                         <div class='foto'>
                             <img src='$detalleProducto[FOTO]' alt='$detalleProducto[NOMBRE]'>
                         </div>
                         <div class='c-texto'>
-                            <p>$detalleProducto[NOMBRE]</p>
-                            <label for='cantidad1'>Cantidad</label>
+                            <p>$detalleProducto[NOMBRE] <span class='c-precio'>".$precio."€</span></p>
                             <form action='index.php?page=cesta' method='post'>
+                                <label for='cantidad1'>Cantidad</label>
                                 <input type='hidden' name='id' value='$key'>
                                 <input type='number' name='cantidad' value='$producto[cantidad]' min='1' max='15'>
                                 <button type='submit' name='actualizar'>Actualizar</button>
@@ -31,7 +32,8 @@ include 'header.php';
                                 <input type='hidden' name='id' value='$key'>
                                 <button type='submit' name='borrar'>Quitar</button>
                             </form>
-                            <p>$$precio</p>
+                            <p class='c-totalproducto'>Total</p>
+                            <p class='c-totalprecio'>".$totalCadaProducto."€</p>
                         </div>
                     </div>";
                 $totalProductos++;

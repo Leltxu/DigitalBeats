@@ -2,6 +2,7 @@
 session_start();
 include "functions.php";
 include "modelos/model_productos.php";
+include "modelos/model_categorias.php";
 require_once "conexion.php";
 
 if (isset($_POST['actualizar'])) {

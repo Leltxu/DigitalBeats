@@ -33,6 +33,7 @@
     border-radius: 8px;
     background: #ffffff;
     gap: 15px;
+    align-items: center;
 }
 
 .c-producto .foto img {
@@ -113,6 +114,7 @@ label {
     padding: 20px;
     border-radius: 8px;
     border: 1px solid #dcdcdc;
+    text-align: center;
 }
 
 .c-total p {
@@ -152,6 +154,10 @@ label {
 .c-scroll {
     max-height: 300px;
     overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
 }
 
 .c-producto-relacionado {
@@ -198,11 +204,30 @@ label {
     background: #ebecec;
     padding: 10px;
     border-radius: 8px;
-    width: calc(33.333% - 15px);
+    width: calc(33.333% - 10px);
     box-sizing: border-box;
+    text-align: center;
 }
 
 .producto-similar p {
     font-size: 14px;
     color: #333;
+}
+
+.c-totalproducto {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.c-precio {
+    font-size: 18px;
+    color: #1e3d59;
+    font-weight: bold;
+}
+
+.c-totalprecio{
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    margin-left: 10px;
 }

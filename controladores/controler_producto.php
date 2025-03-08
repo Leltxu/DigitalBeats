@@ -4,6 +4,7 @@ session_start();
 require '../conexion.php';
 include '../functions.php';
 include '../modelos/model_productos.php';
+include '../modelos/model_categorias.php';
 
 if (isset($_POST['opinion'])) {
     $id = $_POST['id'];
