@@ -3,6 +3,7 @@ session_start();
 include "functions.php";
 include "modelos/model_productos.php";
 include "modelos/model_categorias.php";
+include "modelos/modelo_user.php";
 require_once "conexion.php";
 
 if (isset($_POST['actualizar'])) {
@@ -26,10 +27,11 @@ if (isset($_POST['contacto'])) {
     $errores = [];
     $errores['email'] = validarDatos($email, 'email');
     $errores['nombre'] = validarDatos($nombre, 'text');
-    $errores['descripcion'] = validarDatos($descripcion, 'text');
+    $errores['descripcion'] = validarDatos($descripcion, 'empty');
 
     if (empty($errores['email']) && empty($errores['nombre']) && empty($errores['descripcion'])) {
-        
+        insertarContacto($conexion, $email, $nombre, $motivo, $pedido, $descripcion);
+        header("Location: index.php");
     }
 
 }
