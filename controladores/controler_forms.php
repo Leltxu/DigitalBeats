@@ -68,3 +68,11 @@ if (empty($_SESSION['user'])) {
 }  else {
     include "../vistas/micuenta.php";
 }
+
+
+if (isset($_POST['Enviar'])) {
+    $nombre = sanearDatos($_POST['nombre']);
+    $correo = sanearDatos($_POST['email']);
+    $errores['nombre'] = validarDatos($nombre, 'text');
+    $errores['email'] = validarDatos($correo, 'email');
+}
