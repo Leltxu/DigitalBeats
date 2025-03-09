@@ -6,7 +6,13 @@ include '../functions.php';
 include '../modelos/model_productos.php';
 include '../modelos/model_categorias.php';
 
+
+
 if (isset($_POST['Tramitar'])) {
+    if (!isset($_SESSION['NOMBRE'])) {
+        include "../vistas/login.php";
+        exit();
+        } 
     include "../vistas/pedidorealizado.php";
     exit();
 
