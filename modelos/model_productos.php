@@ -4,14 +4,8 @@ function mostrarProductos($conexion, $tipo) {
         case 'novedades':
             $sql = "SELECT * FROM productos WHERE novedad = 1";
             break;
-        case 'ofertas':
-            $sql = "SELECT * FROM productos WHERE oferta = 1";
-            break;
         case 'destacados':
-            $sql = "SELECT * FROM productos WHERE destacado = 1";
-            break;
-        case 'masvendidos':
-            $sql = "SELECT * FROM productos WHERE masvendido = 1";
+            $sql = "SELECT * FROM productos WHERE destacado = 1 ORDER BY RAND()";
             break;
     }
     $query = mysqli_query($conexion, $sql);
@@ -54,7 +48,7 @@ function obtenerEstellas($conexion,$id,$id_producto,$id_cliente) {
 }
 
 function buscarProducto($conexion,$busqueda) {
-    $sql = "SELECT * FROM productos WHERE nombre LIKE '%$busqueda%'";
+    $sql = "SELECT * FROM productos WHERE nombre LIKE '%$busqueda%' ORDER BY RAND()";
     $query = mysqli_query($conexion, $sql);
     $resultado=[];
     while ($fila = mysqli_fetch_assoc($query)){

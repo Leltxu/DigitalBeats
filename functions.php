@@ -1,6 +1,7 @@
 <?php
-function mostrarTarjetas($productos) {
+function mostrarTarjetas($productos,$cantidad) {
     include_once 'modelos/model_productos.php';
+    $contador=0;
     foreach ($productos as $producto) {
         $tituloProducto=$producto['NOMBRE'];
 
@@ -14,6 +15,10 @@ function mostrarTarjetas($productos) {
         $estrella=0;
         $foto=$producto['FOTO'];
         include "vistas/tarjeta.php";
+        if ($contador>=$cantidad) {
+            break;
+        }
+        $contador++;
     }
 }
 function sanearDatos($datos) {

@@ -76,7 +76,7 @@ include 'header.php';
                     $lista = categoriasProductos($conexion, $relacionados, $lsitaProductos);
 
                     if (count($lista) > 0) {
-                        mostrarTarjetas($lista);
+                        mostrarTarjetas($lista,3);
                     } else {
                         echo "<p>No se a encontrado productos relacionados</p>";
                     }
@@ -99,7 +99,7 @@ if (isset($similares) && $similares != null) {
             <?php
             $listaSimilares = buscarCategoriaProductos($conexion, $similares, $lsitaProductos);
             if (count($listaSimilares) > 0) {
-                mostrarTarjetas($listaSimilares);
+                mostrarTarjetas($listaSimilares,6);
             } else {
                 echo "<p>No se a encontrado productos similares</p>";
             }

@@ -42,7 +42,7 @@ include '../vistas/header.php';
     <h3>Productos relacionados</h3>
     <div class="pr-relacionados-cont">
         <?php
-        mostrarTarjetas($relacionados);
+        mostrarTarjetas($relacionados,7);
         ?>
     </div>
 </div>
