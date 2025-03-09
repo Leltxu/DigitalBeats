@@ -120,6 +120,10 @@ if (isset($_GET['page'])) {
         include __DIR__ . "/../vistas/form_pass.php";
         exit();
     } else if (isset($_POST['dir'])) {
+    } else if ($_GET['page'] == "misopiniones") {
+        include __DIR__ . "/../vistas/misopiniones.php";
+        exit();
+    } else if (isset($_POST['dir'])) {
             $direccion = $_POST['dir'];
         } else {
             $direccion = $_SESSION['DIRECCION'];

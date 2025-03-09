@@ -14,7 +14,7 @@ function obetenerUser($conexion, $email){
             return false;
         }
     } catch (Exception $e) {
-        return"Error al obtener usuario";
+        return "Error al obtener usuario";
     }
 }
 
@@ -77,4 +77,18 @@ function correoExiste($conexion,$email) {
 function insertarContacto($conexion,$email,$nombre,$motivo,$pedido,$descripcion){
     $sql = "INSERT INTO MENSAJES (CORREO_ELECTRONICO, NOMBRE, MOTIVO_CONTACTO, NUMERO_PEDIDO, DESCRIPCION) VALUES ('$email', '$nombre', '$motivo', '$pedido', '$descripcion')";
     mysqli_query($conexion, $sql);
+}
+
+function Opiniones($conexion, $id){
+    $sql = "SELECT * FROM opiniones o 
+    JOIN productos p ON o.ID_PRODUCTO = p.ID_PRODUCTO
+    WHERE ID_CLIENTE = '$id'";
+    
+    $resul = mysqli_query($conexion, $sql);
+    
+    $opiniones = [];
+    while ($fila = mysqli_fetch_assoc($resul)) {
+        $opiniones[] = $fila;
+    }
+    return $opiniones;
 }

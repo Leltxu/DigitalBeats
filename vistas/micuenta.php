@@ -7,7 +7,7 @@ include "header.php";
 
     <div class="lateral">
         <a href="index.php?page=cesta">Mi cesta</a>
-        <a href="">Mis opiniones</a>
+        <a href="controladores/controler_cuenta.php?page=misopiniones">Mis opiniones</a>
         <a href="index.php?page=close">Cerrar sesion</a>
     </div> 
     
