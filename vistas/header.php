@@ -42,7 +42,7 @@
             <a href="index.php?page=cesta"><i class="fa-solid fa-cart-shopping"></i></a>
             <?php
             if (isset($_SESSION['NOMBRE'])) {
-                echo '<a href="controladores/controler_cuenta.php" class="hover"><i class="fa-solid fa-user"></i>Hola ' . $_SESSION['NOMBRE'] . '</a>';
+                echo '<a href="controladores/controler_cuenta.php" class="hover" ><i class="fa-solid fa-user"></i> <span class="nombre">Hola, ' . $_SESSION['NOMBRE'] .'🫡'.'</span></a>';
             } else {
                 echo '<a href="controladores/controler_forms.php"><i class="fa-solid fa-user"></i></a>';
             }

@@ -6,8 +6,7 @@ include "header.php";
 <div class="cuenta-contenedor">
 
     <div class="lateral">
-        <a href="">Pedidos anteriores</a>
-        <a href="cesta.php">Mi cesta</a>
+        <a href="index.php?page=cesta">Mi cesta</a>
         <a href="">Mis opiniones</a>
         <a href="index.php?page=close">Cerrar sesion</a>
     </div> 
