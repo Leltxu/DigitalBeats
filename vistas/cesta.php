@@ -97,9 +97,10 @@ if (isset($similares) && $similares != null) {
         <p>Similares</p>
         <div class="pr-similares">
             <?php
-            $listaSimilares = buscarCategoriaProductos($conexion, $similares, $lsitaProductos);
+            $idPadre=obtenerCategoria($conexion,$similares)['CATEGORIA_PADRE'];
+            $listaSimilares = buscarCategoriaProductos($conexion, $idPadre, $lsitaProductos);
             if (count($listaSimilares) > 0) {
-                mostrarTarjetas($listaSimilares,6);
+                mostrarTarjetas($listaSimilares,7);
             } else {
                 echo "<p>No se a encontrado productos similares</p>";
             }

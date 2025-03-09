@@ -7,14 +7,18 @@ function mostrarProductos($conexion, $tipo) {
         case 'destacados':
             $sql = "SELECT * FROM productos WHERE destacado = 1 ORDER BY RAND()";
             break;
+        default:
+            return 'Tipo de producto no válido';
     }
     $query = mysqli_query($conexion, $sql);
+
     $resultado = [];
     while ($fila = mysqli_fetch_assoc($query)) {
         $resultado[] = $fila;
     }
     return $resultado;
 }
+
 
 
 function mostrarDetallesProducto($conexion,$id) {
