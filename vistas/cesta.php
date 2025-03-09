@@ -61,7 +61,9 @@ include 'header.php';
             <!-- Total -->
             <div class="c-total">
                 <p>Subtotal (<?php echo $totalProductos ?> productos): <?php echo $precioTotal ?>€</p>
-                <input type="submit" value="Tramitar Pedido">
+                <form action="controladores/controler_producto.php" method="post">
+                    <input type="submit" value="Tramitar Pedido"  name="Tramitar">
+                </form>
             </div>
 
             <!-- Productos Relacionados -->
