@@ -43,8 +43,6 @@ function validarDatos($dato, $type) {
         } else if ($type == 'password') {
             if (strlen($dato) < 8) {
                 return 'La contraseña debe tener al menos 8 caracteres';
-            } else if (!preg_match('/[A-Z]/', $dato) || !preg_match('/[0-9]/', $dato) || !preg_match('/[a-z]/', $dato) || !preg_match('/[!@#$%^&*()_+\-=\[\]{};:\'",<>\./?\\|`~]/', $dato)) {
-                return 'La contraseña debe tener al menos una mayúscula, una minúscula, un número y un carácter especial';
             }
 
         } else if ($type == 'tel') {
