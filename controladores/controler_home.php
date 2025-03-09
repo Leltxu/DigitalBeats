@@ -51,6 +51,8 @@ if (isset($_GET['page'])) {
         unset($_SESSION['user']);
         session_destroy();
         header("Location: index.php");
+    }else if ($_GET['page'] == 'quien') {
+        include "vistas/quienessomos.php";
     }
 }
 

@@ -3,6 +3,9 @@
         require __DIR__ . '/../conexion.php';
     }
     include_once __DIR__ . '/../modelos/model_productos.php';
+
+    include_once __DIR__ . '/../modelos/model_categorias.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

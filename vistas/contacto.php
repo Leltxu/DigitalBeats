@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/forms.css">
     <title>Contacto</title>
 </head>
+
 <body>
     
     <form action="index.php?page=contacto" method="post" class="form">
