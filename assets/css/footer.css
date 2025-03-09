@@ -2,6 +2,8 @@ footer {
     background-color: #ebecec;
     padding-block: 10px;
     color: #3d3d3d;
+    
+ 
 }
 
 footer .bloque {
@@ -24,6 +26,9 @@ footer .bloque i {
 
 
 .copy {
+    padding: auto;
     width: 100%;
     text-align: center;
 }
+
+

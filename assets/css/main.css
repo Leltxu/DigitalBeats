@@ -190,3 +190,216 @@ ul {
     height: auto;
     margin-top: 20px;
 }
+
+/* Contenedor principal de las preguntas frecuentes */
+.preguntas-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Título principal */
+.preguntas-container h1 {
+    font-size: 2.5em;
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Estilos para cada pregunta */
+.pregunta {
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Título de cada pregunta */
+.pregunta h2 {
+    font-size: 1.8em;
+    color: #3498db;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+/* Respuesta debajo de cada pregunta */
+.pregunta p {
+    font-size: 20px;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Efecto hover sobre el título de las preguntas */
+.pregunta h2:hover {
+    color: #2980b9;
+}
+
+/* Resaltado para preguntas abiertas (cuando se agregue funcionalidad JS) */
+.pregunta.active h2 {
+    color: #2980b9;
+}
+
+
+
+
+/* Contenedor principal */
+.condiciones-container {
+    width: 75%;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Título principal */
+.condiciones-container h1 {
+    font-size: 2.2em;
+    text-align: center;
+    color: #1e2d3b;
+    margin-bottom: 40px;
+}
+
+/* Títulos de las secciones */
+.condiciones-container h2 {
+    font-size: 1.8em;
+    color: #3498db;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid  #1e3d59;
+    padding-bottom: 5px;
+}
+
+/* Párrafos dentro de las secciones */
+.condiciones-container p {
+    font-size: 20px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Estilos para enlaces (enlace a la política de privacidad) */
+.condiciones-container a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.condiciones-container a:hover {
+    text-decoration: underline;
+}
+
+/* Contenido de cada sección con fondo blanco y sombra */
+.condiciones-container section {
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilo para las listas de condiciones (si las hay) */
+.condiciones-container ul {
+    padding-left: 20px;
+    list-style-type: disc;
+    margin-bottom: 20px;
+}
+
+.condiciones-container li {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Botón de acción o de cierre si es necesario */
+.condiciones-container .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    margin-top: 30px;
+}
+
+.condiciones-container .btn:hover {
+    background-color: #2980b9;
+}
+
+/* Estilos para la parte inferior de la página */
+.condiciones-container footer {
+    text-align: center;
+    font-size: 1em;
+    color: #666;
+    margin-top: 40px;
+}
+
+.condiciones-container footer a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.condiciones-container footer a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo general para la política de cookies */
+.politica-cookies-container {
+    width: 80%;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Título principal */
+.politica-cookies-container h1 {
+    font-size: 2.2em;
+    text-align: center;
+    color: #1e2d3b;
+    margin-bottom: 30px;
+}
+
+/* Párrafos */
+.politica-cookies-container p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Listas con viñetas */
+.politica-cookies-container ul {
+    padding-left: 20px;
+    list-style-type: disc;
+    margin-bottom: 20px;
+}
+
+.politica-cookies-container li {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Enlaces */
+.politica-cookies-container a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.politica-cookies-container a:hover {
+    text-decoration: underline;
+}

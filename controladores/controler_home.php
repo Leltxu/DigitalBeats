@@ -53,6 +53,14 @@ if (isset($_GET['page'])) {
         header("Location: index.php");
     }else if ($_GET['page'] == 'quien') {
         include "vistas/quienessomos.php";
+    }else if ($_GET['page'] == 'preguntas') {
+        include "vistas/preguntasfrecuentes.php";
+    }
+    else if ($_GET['page'] == 'condiciones') {
+        include "vistas/condiciones.php";
+    }
+    else if ($_GET['page'] == 'cookies') {
+        include "vistas/cookies.php";
     }
 }
 
