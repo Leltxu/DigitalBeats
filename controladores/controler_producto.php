@@ -13,6 +13,7 @@ if (isset($_POST['Tramitar'])) {
         include "../vistas/login.php";
         exit();
         } 
+    unset($_SESSION['cesta']);
     include "../vistas/pedidorealizado.php";
     exit();
 
