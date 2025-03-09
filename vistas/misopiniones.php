@@ -5,13 +5,17 @@
 
 
 <div>
-    <h2>Mis Opiniones</h2>
+    <h2>Mis Opiniones🤩</h2>
     
 
     <?php 
 
         $id=$_SESSION['ID_CLIENTE'];
         $opiniones = Opiniones($conexion, $id);
+
+        if (empty($opiniones)) {
+            echo "<h3 class='sinopinion'>No has realizado ninguna opinión</h3>";
+        }
         
         foreach ($opiniones as $opinion) {
             echo "<div class='opinion'>";
