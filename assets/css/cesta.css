@@ -231,3 +231,9 @@ label {
     font-weight: bold;
     margin-left: 10px;
 }
+
+.nohay {
+    text-align: center;
+    font-size: 25px;
+    color: #c82333;
+}

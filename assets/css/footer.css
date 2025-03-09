@@ -2,8 +2,6 @@ footer {
     background-color: #ebecec;
     padding-block: 10px;
     color: #3d3d3d;
-    
- 
 }
 
 footer .bloque {
@@ -23,7 +21,6 @@ footer .bloque ul li a {
 footer .bloque i {
     font-size: 20px;
 }
-
 
 .copy {
     padding: auto;
